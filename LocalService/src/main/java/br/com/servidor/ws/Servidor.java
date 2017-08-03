@@ -9,8 +9,6 @@ import br.com.servidor.util.ComandosWindowsUtil;
 
 public class Servidor {
 	
-	private static final String COMAND_PROCURA_PORTAS_ABERTAS = "netstat -a -n -o ";
-	private static final String COMAND_MATAR_PROCESSO_POR_PID = "taskKill.exe /F /PID ";
 	private static final String PORTA = "8085";
 
 	public static void main(String[] args) {
@@ -18,9 +16,7 @@ public class Servidor {
 			mataPortaSeEstiverOcupada();
 			abrePorta();
 		}
-		System.getProperties().get("os.name");
 	}
-	
 	
 	/**Executa comandos que verificas as portas disponiveis
 	 * 
@@ -28,14 +24,11 @@ public class Servidor {
 	 * 
 	 */
 	private static void mataPortaSeEstiverOcupada() {
-		Map<String, String> getenv = System.getenv();
-		System.out.println(getenv.get("SESSION"));
-		if(false){
+		if(System.getProperty("os.name").contains("Windows")){
 			new ComandosWindowsUtil().mataPortaSeEstiverOcupada(PORTA);
 		}else{
 			new ComandosLinuxUtil().mataPortaSeEstiverOcupada(PORTA);
 		}
-		
 	}
 	
 	private static boolean abrePorta() {
@@ -45,7 +38,5 @@ public class Servidor {
 		} catch (Exception e) {
 			return false;
 		}
-		
 	}
-
 }

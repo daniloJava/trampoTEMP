@@ -20,10 +20,9 @@ public abstract class SistemaOperacionalLocal {
 				if(lineOut.contains(porta)) //Verifica porta usada
 					pid = lineOut;
 			}
-			pid = pid.substring(pid.lastIndexOf("ESCUTA") + 9).trim(); // Recupera PID - Verificar como vou pegar essa porra, LISTENING É PARA WINDOWNS E ESCUTA PRA UBUTUM 
 			
 			//Matar processo pelo PID filtrado taskKill.exe /F /PID 
-			Runtime.getRuntime().exec(comandoMatarProcesso + pid);
+			Runtime.getRuntime().exec(comandoMatarProcesso + getfiltroPID(pid));
 			
 			input.close();
 			
@@ -31,4 +30,6 @@ public abstract class SistemaOperacionalLocal {
 			System.out.println("DEU BOSTA ");
 		}
 	}
+	
+	protected abstract String getfiltroPID(String pid);
 }
