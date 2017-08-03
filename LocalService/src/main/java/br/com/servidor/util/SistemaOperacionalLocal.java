@@ -17,8 +17,11 @@ public abstract class SistemaOperacionalLocal {
 			String lineOut = input.readLine();
 			
 			while ((lineOut = input.readLine()) != null) {
-				if(lineOut.contains(porta)) //Verifica porta usada
+				if(lineOut.contains(porta)){ //Verifica porta usada
 					pid = lineOut;
+					break;
+				}
+				
 			}
 			
 			//Matar processo pelo PID filtrado taskKill.exe /F /PID 
