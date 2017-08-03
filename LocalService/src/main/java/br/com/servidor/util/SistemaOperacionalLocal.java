@@ -15,11 +15,12 @@ public abstract class SistemaOperacionalLocal {
 			BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
 			String lineOut = input.readLine();
+			
 			while ((lineOut = input.readLine()) != null) {
 				if(lineOut.contains(porta)) //Verifica porta usada
 					pid = lineOut;
 			}
-			pid = pid.substring(pid.lastIndexOf("LISTENING") + 9).trim(); // Recupera PID
+			pid = pid.substring(pid.lastIndexOf("ESCUTA") + 9).trim(); // Recupera PID - Verificar como vou pegar essa porra, LISTENING É PARA WINDOWNS E ESCUTA PRA UBUTUM 
 			
 			//Matar processo pelo PID filtrado taskKill.exe /F /PID 
 			Runtime.getRuntime().exec(comandoMatarProcesso + pid);

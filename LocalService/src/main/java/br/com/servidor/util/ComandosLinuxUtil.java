@@ -2,8 +2,8 @@ package br.com.servidor.util;
 
 public class ComandosLinuxUtil  extends SistemaOperacionalLocal{
 	
-	private static final String COMAND_PROCURA_PORTAS_ABERTAS = "netstat -a -n -o ";
-	private static final String COMAND_MATAR_PROCESSO_POR_PID = "taskKill.exe /F /PID ";
+	private static final String COMAND_PROCURA_PORTAS_ABERTAS = "netstat -t -l -p --numeric-ports ";
+	private static final String COMAND_MATAR_PROCESSO_POR_PID = "kill -9 ";
 	
 
 	public void mataPortaSeEstiverOcupada(String porta) {

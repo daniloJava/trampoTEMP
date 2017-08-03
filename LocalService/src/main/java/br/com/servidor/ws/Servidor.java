@@ -1,5 +1,7 @@
 package br.com.servidor.ws;
 
+import java.util.Map;
+
 import javax.xml.ws.Endpoint;
 
 import br.com.servidor.util.ComandosLinuxUtil;
@@ -26,8 +28,9 @@ public class Servidor {
 	 * 
 	 */
 	private static void mataPortaSeEstiverOcupada() {
-		System.getenv();
-		if(true){
+		Map<String, String> getenv = System.getenv();
+		System.out.println(getenv.get("SESSION"));
+		if(false){
 			new ComandosWindowsUtil().mataPortaSeEstiverOcupada(PORTA);
 		}else{
 			new ComandosLinuxUtil().mataPortaSeEstiverOcupada(PORTA);
