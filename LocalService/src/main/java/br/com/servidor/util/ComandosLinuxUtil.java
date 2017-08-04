@@ -11,7 +11,7 @@ public class ComandosLinuxUtil  extends SistemaOperacionalLocal{
 
 	@Override
 	protected String getfiltroPID(String pid) {
-		return pid.substring(pid.length() - 10, pid.indexOf("//")).trim();
+		return pid.substring(pid.indexOf("/") - 10, pid.indexOf("/")).trim();
 	}
 	
 
