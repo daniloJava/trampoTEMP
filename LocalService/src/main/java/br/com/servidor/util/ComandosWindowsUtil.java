@@ -14,7 +14,7 @@ public class ComandosWindowsUtil extends SistemaOperacionalLocal{
 
 	@Override
 	protected String getfiltroPID(String pid) {
-		JOptionPane.showMessageDialog(null, "Recebendo PID " + pid);
+		System.out.println("PID : " + pid);
 		return pid.substring(pid.length() - 7).trim();
 	}
 	

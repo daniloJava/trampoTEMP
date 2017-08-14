@@ -1,9 +1,5 @@
 package br.com.servidor.ws;
 
-import java.util.Map;
-
-import javax.swing.JOptionPane;
-import javax.swing.plaf.synth.SynthSplitPaneUI;
 import javax.xml.ws.Endpoint;
 
 import br.com.servidor.util.ComandosLinuxUtil;
@@ -31,16 +27,16 @@ public class Servidor {
 		}else{
 			new ComandosLinuxUtil().mataPortaSeEstiverOcupada(PORTA);
 		}
-		JOptionPane.showMessageDialog(null, "MATA PROCESSO");
 	}
 	
 	private static boolean abrePorta() {
 		try {
 			Endpoint publish = Endpoint.publish("http://localhost:" + PORTA + "/LocalService/servidor", new Cliente());
-			JOptionPane.showMessageDialog(null, "PORTA ABRIDA");
+			System.out.println("PORTA ABERTA : " + "http://localhost:" + PORTA + "/LocalService/servidor");
 			return true;
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "FALHA EM ABRIR PORTA");
+			System.out.println("Não foi possivel abrir porta");
+			e.printStackTrace();
 			return false;
 		}
 	}
