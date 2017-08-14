@@ -17,27 +17,26 @@ DefaultDirName={pf}\AssinaturaProdesp\Prodesp-1-1-0
 DisableDirPage=yes
 DefaultGroupName=Assinatura Prodesp v1-1-0
 DisableProgramGroupPage=yes
-OutputDir=C:\Users\Magna18\Desktop
+OutputDir=setup
 OutputBaseFilename=setup1-1-0
 Compression=lzma
 SolidCompression=yes
 
 [Languages]
-Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
+Name: brazilianportuguese; MessagesFile: compiler:Languages\BrazilianPortuguese.isl
 
 [Tasks]
-Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons}; Flags: unchecked
 
 [Files]
-Source: "C:\Users\Magna18\Downloads\TesteCriatura\versao 1.1.0\LocalService.bat"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Magna18\Downloads\TesteCriatura\versao 1.1.0\LocalService.bat"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Magna18\Downloads\TesteCriatura\versao 1.1.0\LocalService1-1-0.jar"; DestDir: "{app}"; Flags: ignoreversion
+Source: LocalService.bat; DestDir: {app}; Flags: ignoreversion
+Source: LocalService.bat; DestDir: {app}; Flags: ignoreversion
+Source: LocalService1-1-0.jar; DestDir: {app}; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{group}\Assinatura Prodesp"; Filename: "{app}\LocalService.bat"
-Name: "{commondesktop}\Assinatura Prodesp"; Filename: "{app}\LocalService.bat"; Tasks: desktopicon
+Name: {group}\Assinatura Prodesp; Filename: {app}\LocalService.bat
+Name: {commondesktop}\Assinatura Prodesp; Filename: {app}\LocalService.bat; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\LocalService.bat"; Description: "{cm:LaunchProgram,Assinatura Prodesp}"; Flags: shellexec postinstall skipifsilent
-
+Filename: {app}\LocalService.bat; Description: {cm:LaunchProgram,Assinatura Prodesp}; Flags: shellexec postinstall skipifsilent
